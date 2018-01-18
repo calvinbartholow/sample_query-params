@@ -19,7 +19,13 @@ class ParamsExampleController < ApplicationController
 
   def my_name
     input_name = params["query_name"]
-    render json: {name: "#{input_name}"}
+    output_message = ""
+    if input_name.upcase.starts_with?("A")
+      output_message = "Hey, your name starts with A!"
+    elsif 
+      output_message = "Hey, your name doesn't start with an a! PHONEY"
+    end 
+    render json: {name: "#{input_name.upcase}", message: output_message}
   end 
 
 
