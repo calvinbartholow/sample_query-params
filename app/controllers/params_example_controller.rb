@@ -17,5 +17,10 @@ class ParamsExampleController < ApplicationController
     end 
   end 
 
+  def my_name
+    input_name = params["query_name"]
+    render json: {name: "#{input_name}"}
+  end 
+
 
 end
